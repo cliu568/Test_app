@@ -1,2 +1,2 @@
 # TODO INIT make sure this is set to the right version of Python to be used by Heroku
-python-3.6.3
+python-3.5.3

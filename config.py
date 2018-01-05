@@ -9,7 +9,7 @@ import constants as const
 #
 # Also note that ".replace('mysql://', 'mysql+pymysql://')" can be removed if we're using Postgres,
 # though in theory it won't hurt to keep it around
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'].replace('mysql://', 'mysql+pymysql://') if const.IS_PROD else <TODO INIT replace this with local_db_url>
+SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'].replace('mysql://', 'mysql+pymysql://') if const.IS_PROD else "mysql+pymysql://root@localhost/firsttest"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 DATABASE_CONNECT_OPTIONS = {}
@@ -19,8 +19,8 @@ THREADS_PER_PAGE = 2
 CSRF_ENABLED = True
 
 # TODO INIT: set this to something
-CSRF_SESSION_KEY =
+CSRF_SESSION_KEY =123
 
 # TODO INIT: set this to something
-SECRET_KEY =
+SECRET_KEY =123
 

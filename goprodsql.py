@@ -8,9 +8,10 @@ import subprocess
 def main():
     db_url_line = None
 
-    heroku_config = subprocess.Popen(['heroku', 'config'], stdout=subprocess.PIPE)
+    heroku_config = subprocess.Popen('heroku config:get DATABASE_URL -a hackerhousetest', stdout=subprocess.PIPE, shell = True)
     for l in heroku_config.stdout:
         l_str = l.decode('utf-8').strip()
+        l_str = 'DATABASE_URL: '+ l_str
         if l_str.startswith('DATABASE_URL'):
             # this line will look something like the following:
             # DATABASE_URL:         mysql://asdfasdfasdf:blahblah@us-cdbr-iron-east-04.cleardb.net/heroku_12345678abcd
@@ -34,7 +35,7 @@ def main():
     print('Host:', host)
     print('Database Name:', database_name)
 
-    subprocess.call(['mysql', '-u{0}'.format(user), '-p{0}'.format(pw), '-h{0}'.format(host), database_name])
+    subprocess.call(['mysql', '-u{0}'.format(user), '-p{0}'.format(pw), '-h{0}'.format(host), database_name], shell = True)
 
 if __name__ == '__main__':
     main()

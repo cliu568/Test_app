@@ -1,7 +1,7 @@
 # TODO INIT: replace <project_name> with the name of the project name file.
 # This is the file in which app and db are instantiated.
 # For example, with hackolade, it was hackolade.py
-from <project_name> import db
+from HelloWorld import db
 
 class Base(db.Model):
     __abstract__ = True
