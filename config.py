@@ -11,7 +11,7 @@ import constants as const
 # though in theory it won't hurt to keep it around
 SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'].replace('mysql://', 'mysql+pymysql://') if const.IS_PROD else "mysql+pymysql://root@localhost/firsttest"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+print(SQLALCHEMY_DATABASE_URI)
 DATABASE_CONNECT_OPTIONS = {}
 
 THREADS_PER_PAGE = 2
